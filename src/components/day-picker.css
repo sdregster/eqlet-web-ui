@@ -1,0 +1,55 @@
+.rdp-day {
+    color: rgb(119,29,29);
+    font-size: 12px;
+}
+
+.rdp-nav {
+    color: rgb(119,29,29);
+}
+
+.rdp-day_today:not(.rdp-day_outside) {
+    font-style: normal;
+    font-weight: 400;
+    text-underline-offset: 3px;
+}
+
+.rdp-months {
+    border: 2px solid rgb(119,29,29);
+    padding: 3px;
+    border-radius: 0.5rem;
+}
+
+.rdp {
+    padding: 4px;
+    background-color: rgb(255 248 241);
+    border-radius: 0.5rem;
+    --rdp-cell-size: 30px;
+    box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+    background-color: rgb(255 248 241);
+    border: 2px solid rgb(119,29,29);
+}
+
+.rdp-head {
+    color: rgb(119,29,29);
+    font-size: 12px;
+}
+
+.rdp-caption_label{
+    font-size: 20px;
+    line-height: 2rem;
+    font-weight: 500;
+    color: rgb(119,29,29);
+    text-transform: capitalize;
+}
+
+.rdp-day_selected, .rdp-day_selected:hover {
+    background-color: rgb(119,29,29);
+    color: rgb(255 248 241);
+}
+
+
+
+
