@@ -1,12 +1,8 @@
 # About
 
-This is a MVP of web-ui for EqLet card game. 
-Final version of UX/UI is currently in process with the designer.
+This is a MVP of web-ui for EqLet card game.\
+Final version of UX/UI is currently in process with the designer.\
 This project has been deployed on https://eqlet.miclient.ru/
-
-
-
-
 
 ## Available Scripts
 
