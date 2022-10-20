@@ -75,6 +75,22 @@ const SavesMenu = () => {
     </button>
   );
 
+  const clearSearchFieldHandler = () => {
+    setFilter('');
+    setSelectedDates([]);
+  };
+
+  const inputFieldChangeHandler = (e) => {
+    if (selectedDates.length === 1) {
+      setSelectedDates([]);
+      setFilter(e.target.value);
+    } else if (selectedDates.length > 1) {
+      return;
+    } else {
+      setFilter(e.target.value);
+    }
+  };
+
   return (
     <div className="w-[180px] h-full p-2">
       <div className="rounded-lg text-2xl text-center font-medium text-red-900 w-full bg-orange-50 p-1">
@@ -87,12 +103,27 @@ const SavesMenu = () => {
 
       <div className="rounded-lg bg-orange-50 h-[518px] mt-4 p-1 shadow-[3px_3px_7px_1px_rgba(0,0,0,0.33)]">
         <div className="rounded-t-lg bg-orange-50 h-9 border-2 border-red-900 flex">
-          <input
-            className="w-full m-1 float-right text-xs px-2 border border-gray-500 placeholder:text-red-900 placeholder:text-center text-red-900 outline-none shadow-sm focus:border-red-900 focus:ring-red-900 focus:placeholder-transparent"
-            placeholder="Выбор даты"
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            type="search"></input>
+          <div className="pl-[4px] pt-[3px] relative">
+            <input
+              className="h-[24px] w-full text-xs px-2 border border-gray-500 placeholder:text-red-900 placeholder:text-center text-red-900 outline-none shadow-sm focus:border-red-900 focus:ring-red-900 focus:placeholder-transparent"
+              placeholder="Выбор даты"
+              value={filter}
+              onChange={inputFieldChangeHandler}
+              type="text"></input>
+            {filter.length > 0 ? (
+              <button onClick={clearSearchFieldHandler} className="absolute right-0 top-[6px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="rgb(127,29,29)"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="rgb(127,29,29)"
+                  class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            ) : null}
+          </div>
           <img
             className="w-[45px]"
             onClick={() => setCalendarStatus(!calendarStatus)}
@@ -120,7 +151,9 @@ const SavesMenu = () => {
           {filteredSaves?.map((save) => (
             <div
               key={save.saveGUID}
-              onClick={() => selectSaveHandler(save)}
+              onClick={
+                save.saveGUID === selectedSave.saveGUID ? null : () => selectSaveHandler(save)
+              }
               className={
                 selectedSave
                   ? save.saveGUID === selectedSave.saveGUID
