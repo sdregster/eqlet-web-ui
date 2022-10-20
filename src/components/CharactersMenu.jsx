@@ -49,7 +49,11 @@ const CharactersMenu = () => {
           {filteredCharacters?.map((character) => (
             <div
               key={character.characterGUID}
-              onClick={() => selectCharacterHandler(character)}
+              onClick={
+                character.characterGUID === selectedCharacter.characterGUID
+                  ? null
+                  : () => selectCharacterHandler(character)
+              }
               className={
                 selectedCharacter
                   ? character.characterGUID === selectedCharacter.characterGUID
