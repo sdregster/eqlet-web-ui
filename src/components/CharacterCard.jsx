@@ -8,7 +8,6 @@ const CharacterCard = () => {
   const [aditionalExpInfo, setAdditionalExpInfo] = useState({ currentLevel: '', hpPercantage: '' });
 
   useEffect(() => {
-    setActiveTab('effects');
     levelCalculation(exactCharacterCard.exp);
   }, [exactCharacterCard]);
 
