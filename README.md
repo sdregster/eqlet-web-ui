@@ -1,8 +1,19 @@
-# About
+## Update
+
+Made restructuring of the application using best practices.\
+Tailwind styling has been replaced with SCSS.
+
+## About
 
 This is a MVP of web-ui for EqLet card game.\
 Final version of UX/UI is currently in process with the designer.\
 This project has been deployed on https://eqlet.miclient.ru/
+
+## Tech stack
+
+React\
+Redux Toolkit\
+SCSS
 
 ## Available Scripts
 

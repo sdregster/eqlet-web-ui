@@ -38,6 +38,8 @@ import agility from '../assets/Agility.png';
 import intelligence from '../assets/Intelligence.png';
 import charisma from '../assets/Сharisma.png';
 
+import template from '../assets/template.jpg';
+
 const images = {
   raceUnicornsAct,
   raceBisonsAct,
@@ -74,6 +76,7 @@ const images = {
   agility,
   intelligence,
   charisma,
+  template,
 };
 
 export default images;
