@@ -1,4 +1,4 @@
-## Update
+## Global update #26.10.2022
 
 Made restructuring of the application using best practices.\
 Tailwind styling has been replaced with SCSS.
